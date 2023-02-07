@@ -1,61 +1,80 @@
-// Problem 1
+/* 
+Problem 1: Write a function named mindGame(), which parameter should be only positive number. Multiply 3 times, add 10, divide by 2 and subtract 5 of the number. Now return the value of the function.
+*/
+
 function mindGame(positiveNumber) {
 	if (typeof positiveNumber === "number") {
 		if (positiveNumber >= 0) {
 			const totalNumber = (positiveNumber * 3 + 10) / 2 - 5;
 			return totalNumber;
 		} else {
-			return "Please input a positive number";
+			return "Error! Please input a positive number.";
 		}
 	} else {
-		return "Please input a number";
+		return "Invalid parameter! Please input a number as a parameter.";
 	}
 }
 
-// Problem 2
-function evenOdd(word) {
-	if (typeof word === "string") {
-		if (word.length % 2 === 0) {
+/* 
+Problem 2: Write a function named evenOdd(), which parameter should be a string only. Count the total character of the string. If the total number of character is even return as even or if the total number is odd return as odd in the function.
+*/
+
+function evenOdd(stringWords) {
+	if (typeof stringWords === "string") {
+		if (stringWords.length % 2 === 0) {
 			return "even";
 		} else {
 			return "odd";
 		}
 	} else {
-		return "Please input a string";
+		return "Invalid parameter! Please input a string as a parameter.";
 	}
 }
 
-// Problem 3
-function isLGSeven(number) {
-	if (typeof number === "number") {
-		const differenceOFNumber = number - 7;
+/* 
+Problem 3: Write a function named isLGSeven(), which parameter should be a number only. Subtract 7 from the input number. If the difference is less then 7, return the difference number and if the difference is greater than or equal 7, multiply 2 times of the input number.
+*/
+
+function isLGSeven(givenNumber) {
+	if (typeof givenNumber === "number") {
+		const differenceOFNumber = givenNumber - 7;
 		if (differenceOFNumber < 7) {
 			return differenceOFNumber;
 		} else {
-			return number * 2;
+			return givenNumber * 2;
 		}
 	} else {
-		return "Please input a number";
+		return "Invalid parameter! Please input a number as a parameter.";
 	}
 }
 
-// Problem 4
-function findingBadData(arrayOfNumbers) {
+/* 
+Problem 4: Write a function named findingBadData(), which parameter should be an array, consist of positive and negative numbers only. Count the negative numbers and return how many negative number in the array.
+*/
+
+function findingBadData(givenArray) {
 	let badData = [];
-	if (Array.isArray(arrayOfNumbers) === true) {
-		for (let i = 0; i < arrayOfNumbers.length; i++) {
-			const number = arrayOfNumbers[i];
-			if (number < 0) {
-				badData.push(number);
+	if (Array.isArray(givenArray) === true) {
+		for (let i = 0; i < givenArray.length; i++) {
+			const number = givenArray[i];
+			if (typeof givenArray[i] === "number") {
+				if (number < 0) {
+					badData.push(number);
+				}
+			} else {
+				return "Something is wrong! Please check your array and input only numbers.";
 			}
 		}
 		return badData.length;
 	} else {
-		return "Please input an array";
+		return "Invalid parameter! Please input an array as a parameter.";
 	}
 }
 
-// problem 5
+/* 
+Problem 5: Write a function named gemsToDiamond(), which has 3 parameters and should be numbers only. Multiply first parameter 21 times, second parameter 32 times and third parameter 43 times and count total number of 3 parameters. If total number greater or equal 2000, subtract 2000 from total number and return the value of total number.
+*/
+
 function gemsToDiamond(firstFriendGems, secondFriendGems, thirdFriendGems) {
 	if (
 		typeof firstFriendGems === "number" &&
@@ -76,9 +95,7 @@ function gemsToDiamond(firstFriendGems, secondFriendGems, thirdFriendGems) {
 			return totalDiamond;
 		}
 	} else {
-		return "Please Input Numbers";
+		return "Invalid parameter! Please input only numbers as a parameters.";
 	}
 }
 
-const res = gemsToDiamond(100, 5, 1);
-console.log(res);
